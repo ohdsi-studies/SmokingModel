@@ -25,7 +25,7 @@ smokingRiskModel <- SmokingModel::loadSmokingModel()
 
 # apply the model to new data
 pred <- PatientLevelPrediction::predictPlp(
-   plpModel = plpModel, 
+   plpModel = smokingRiskModel, 
    plpData = plpData, 
    population = plpData$cohorts
      )
