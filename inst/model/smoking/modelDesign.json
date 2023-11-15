@@ -1,0 +1,133 @@
+{
+  "targetId": 1,
+  "outcomeId": 2,
+  "restrictPlpDataSettings": {
+    "studyStartDate": "",
+    "studyEndDate": "",
+    "firstExposureOnly": false,
+    "washoutPeriod": 0,
+    "sampleSize": null,
+    "attr_class": "restrictPlpDataSettings"
+  },
+  "covariateSettings": {
+    "temporal": false,
+    "DemographicsGender": true,
+    "DemographicsAge": true,
+    "DemographicsAgeGroup": true,
+    "DemographicsRace": true,
+    "DemographicsEthnicity": true,
+    "DemographicsIndexMonth": true,
+    "DemographicsPriorObservationTime": true,
+    "ConditionOccurrenceLongTerm": true,
+    "ConditionEraLongTerm": true,
+    "ConditionGroupEraLongTerm": true,
+    "DrugExposureLongTerm": true,
+    "DrugEraLongTerm": true,
+    "DrugGroupEraLongTerm": true,
+    "ProcedureOccurrenceLongTerm": true,
+    "MeasurementLongTerm": true,
+    "ObservationLongTerm": true,
+    "DistinctConditionCountLongTerm": true,
+    "DistinctIngredientCountLongTerm": true,
+    "DistinctProcedureCountLongTerm": true,
+    "DistinctMeasurementCountLongTerm": true,
+    "VisitCountLongTerm": true,
+    "longTermStartDays": -365,
+    "mediumTermStartDays": -180,
+    "shortTermStartDays": -30,
+    "endDays": 0,
+    "includedCovariateConceptIds": [],
+    "addDescendantsToInclude": false,
+    "excludedCovariateConceptIds": [80502, 134736, 201820, 257907, 316866, 317009, 317576, 318736, 319835, 432867, 440383, 3000995, 3004249, 3004501, 3004518, 3005022, 3007070, 3012697, 3012888, 3022192, 3025315, 3028288, 3028437, 3036277, 3037705, 3038553, 3046352, 3049918, 4052465, 4052949, 4092281, 4115402, 4149389, 4155297, 4169163, 4214838, 4218917, 4246415, 4271751, 4291025, 4312326, 40757976, 40764347, 40766356, 40766364, 40766642, 40766928, 40766942, 40767149, 40767560, 40769798, 40771096, 40771104, 40771121, 40771122, 42869668, 43530807, 44783954, 44786671, 44786838, 44804793, 44809580, 45765917, 46236003],
+    "addDescendantsToExclude": false,
+    "includedCovariateIds": [],
+    "attr_class": "covariateSettings",
+    "attr_fun": "getDbDefaultCovariateData"
+  },
+  "populationSettings": {
+    "binary": true,
+    "includeAllOutcomes": true,
+    "firstExposureOnly": false,
+    "washoutPeriod": 365,
+    "removeSubjectsWithPriorOutcome": false,
+    "priorOutcomeLookback": 99999,
+    "requireTimeAtRisk": false,
+    "minTimeAtRisk": 364,
+    "riskWindowStart": 0,
+    "startAnchor": "cohort start",
+    "riskWindowEnd": 1,
+    "endAnchor": "cohort start",
+    "restrictTarToCohortEnd": false,
+    "attr_class": "populationSettings"
+  },
+  "sampleSettings": [
+    {
+      "numberOutcomestoNonOutcomes": 1,
+      "sampleSeed": 1,
+      "attr_class": "sampleSettings",
+      "attr_fun": "sameData"
+    }
+  ],
+  "featureEngineeringSettings": [
+    {
+      "attr_class": "featureEngineeringSettings",
+      "attr_fun": "sameData"
+    }
+  ],
+  "preprocessSettings": {
+    "minFraction": 0.001,
+    "normalize": true,
+    "removeRedundancy": true,
+    "attr_class": "preprocessSettings"
+  },
+  "modelSettings": {
+    "fitFunction": "fitCyclopsModel",
+    "param": {
+      "priorParams": {
+        "priorType": "laplace",
+        "forceIntercept": false,
+        "variance": 0.01,
+        "exclude": 0
+      },
+      "includeCovariateIds": null,
+      "upperLimit": 20,
+      "lowerLimit": 0.01,
+      "priorCoefs": null,
+      "attr_settings": {
+        "priorfunction": "Cyclops::createPrior",
+        "selectorType": "byPid",
+        "crossValidationInPrior": true,
+        "modelType": "logistic",
+        "addIntercept": true,
+        "useControl": true,
+        "seed": 25573001,
+        "name": "Lasso Logistic Regression",
+        "threads": -1,
+        "tolerance": 2e-06,
+        "cvRepetitions": 1,
+        "maxIterations": 3000
+      },
+      "attr_modelType": "binary",
+      "attr_saveType": "RtoJson"
+    },
+    "attr_class": "modelSettings"
+  },
+  "splitSettings": {
+    "test": 0.25,
+    "train": 0.75,
+    "seed": 67109,
+    "nfold": 3,
+    "attr_class": "splitSettings",
+    "attr_fun": "randomSplitter"
+  },
+  "executeSettings": {
+    "runSplitData": true,
+    "runSampleData": false,
+    "runfeatureEngineering": false,
+    "runPreprocessData": true,
+    "runModelDevelopment": true,
+    "runCovariateSummary": true,
+    "attr_class": "executeSettings"
+  },
+  "attr_class": "modelDesign"
+}

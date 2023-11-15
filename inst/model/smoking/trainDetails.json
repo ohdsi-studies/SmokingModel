@@ -1,0 +1,22 @@
+{
+  "analysisId": "Analysis_1",
+  "analysisSource": "",
+  "developmentDatabase": "cdm_optum_ses",
+  "attrition": {
+    "outcomeId": [2, 2],
+    "description": ["Original cohorts", "At least 365 days of observation prior"],
+    "targetCount": [500000,500000 ],
+    "uniquePeople": [500000,500000 ],
+    "outcomes": [120954, 120954],
+    "attr_class": "data.frame",
+    "attr_row.names": [1, 2]
+  },
+  "trainingTime": "33.99702 mins",
+  "trainingDate": "2017-01-01",
+  "modelName": "logistic",
+  "finalModelParameters": {
+    "variance": 0.03181567,
+    "log_likelihood": -126198.9
+  },
+  "hyperParamSearch": null
+}

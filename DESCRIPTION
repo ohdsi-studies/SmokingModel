@@ -1,0 +1,26 @@
+Package: SmokingModel
+Type: Package
+Title: Smoking Risk Prediction Model
+Version: 0.0.1
+Author: Jenna Reps
+Maintainer: Jenna Reps <reps@ohdsi.org>
+Description: Apply the smoking risk model to data in the OMOP CDM format.
+License: Apache License 2.0
+Encoding: UTF-8
+LazyData: true
+Depends:
+    R (>= 3.3.0)
+VignetteBuilder: knitr
+Imports:
+    PatientLevelPrediction
+Suggests:
+    kableExtra,
+    knitr,
+    ResultModelManager,
+    RSQLite,
+    testthat,
+    withr
+Remotes:
+    ohdsi/PatientLevelPrediction
+    ohdsi/ResultModelManager
+RoxygenNote: 7.2.3
