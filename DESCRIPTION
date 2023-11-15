@@ -21,6 +21,6 @@ Suggests:
     testthat,
     withr
 Remotes:
-    ohdsi/PatientLevelPrediction
+    ohdsi/PatientLevelPrediction,
     ohdsi/ResultModelManager
 RoxygenNote: 7.2.3
